@@ -2,7 +2,10 @@ export function extractTime(dateString) {
 	const date = new Date(dateString);
 	const hours = padZero(date.getHours());
 	const minutes = padZero(date.getMinutes());
-	return `${hours}:${minutes}`;
+	const day = date.getDate();
+	const month = date.getMonth() + 1;
+	const year = date.getFullYear();
+	return `${month}/${day}/${year} ${hours}:${minutes}`;
 }
 
 // Helper function to pad single-digit numbers with a leading zero
